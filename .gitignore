@@ -61,6 +61,8 @@ output/
 
 iOS/
 macOS/
+macos-products
+.swiftpm
 #iOS/AEC3.build
 #iOS/CMake*
 #macOS/AEC3.build
