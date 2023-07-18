@@ -167,10 +167,15 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     )
 endif()
 
+target_include_directories(${PROJECT_NAME} PUBLIC
+    "/Users/balazs/Dropbox/unity-app/AEC3/libs/cpu_features-0.6.0/ndk_compat"
+)
+
 ################################################################################
 # Compile definitions
 ################################################################################
 if (APPLE)
+    message("APPLE")
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         target_compile_definitions(${PROJECT_NAME} PRIVATE
                 "$<$<CONFIG:Debug>:"
@@ -207,6 +212,7 @@ if (APPLE)
                 )
     endif()
 elseif(WIN32)
+    message("WIN32")
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         target_compile_definitions(${PROJECT_NAME} PRIVATE
             "$<$<CONFIG:Debug>:"
@@ -240,6 +246,13 @@ elseif(WIN32)
             "_MBCS"
         )
     endif()
+else()
+    message("Android")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+        "WEBRTC_POSIX;"
+        "WEBRTC_LINUX;"
+        "WEBRTC_ANDROID;"
+    )
 endif()
 
 ################################################################################
@@ -579,6 +592,10 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     )
 endif()
 
+target_include_directories(${PROJECT_NAME} PUBLIC
+    "/Users/balazs/Dropbox/unity-app/AEC3/libs/cpu_features-0.6.0/ndk_compat"
+)
+
 ################################################################################
 # Compile definitions
 ################################################################################
@@ -652,6 +669,13 @@ elseif(WIN32)
             "_MBCS"
         )
     endif()
+else()
+    message("Android")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+        "WEBRTC_POSIX;"
+        "WEBRTC_LINUX;"
+        "WEBRTC_ANDROID;"
+    )
 endif()
 
 ################################################################################
@@ -970,10 +994,15 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     )
 endif()
 
+target_include_directories(${PROJECT_NAME} PUBLIC
+    "/Users/balazs/Dropbox/unity-app/AEC3/libs/cpu_features-0.6.0/ndk_compat"
+)
+
 ################################################################################
 # Compile definitions
 ################################################################################
 if (APPLE)
+    message("Apple")
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         target_compile_definitions(${PROJECT_NAME} PRIVATE
                 "$<$<CONFIG:Debug>:"
@@ -1010,6 +1039,7 @@ if (APPLE)
                 )
     endif()
 elseif(WIN32)
+    message("WIN32")
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         target_compile_definitions(${PROJECT_NAME} PRIVATE
             "$<$<CONFIG:Debug>:"
@@ -1043,6 +1073,13 @@ elseif(WIN32)
             "_MBCS"
         )
     endif()
+else()
+    message("Android")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+        "WEBRTC_POSIX;"
+        "WEBRTC_LINUX;"
+        "WEBRTC_ANDROID;"
+    )
 endif()
 
 ################################################################################
@@ -1140,6 +1177,9 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     )
 endif()
 
+
+if (BUILD_DEMO)
+
 set(PROJECT_NAME demo)
 
 ################################################################################
@@ -1207,6 +1247,10 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
         "${CMAKE_CURRENT_SOURCE_DIR}/base/jsoncpp/include"
     )
 endif()
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+    "/Users/balazs/Dropbox/unity-app/AEC3/libs/cpu_features-0.6.0/ndk_compat"
+)
 
 ################################################################################
 # Compile definitions
@@ -1281,6 +1325,13 @@ elseif(WIN32)
             "_MBCS"
         )
     endif()
+else()
+    message("Android")
+    target_compile_definitions(${PROJECT_NAME} PRIVATE
+        "WEBRTC_POSIX;"
+        "WEBRTC_LINUX;"
+        "WEBRTC_ANDROID;"
+    )
 endif()
 
 ################################################################################
@@ -1385,3 +1436,4 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
     )
 endif()
 
+endif()
