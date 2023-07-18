@@ -168,7 +168,7 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
 endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-    "/Users/balazs/Dropbox/unity-app/AEC3/libs/cpu_features-0.6.0/ndk_compat"
+    "${CMAKE_CURRENT_SOURCE_DIR}/libs/cpu_features-0.6.0/ndk_compat"
 )
 
 ################################################################################
@@ -593,7 +593,7 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
 endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-    "/Users/balazs/Dropbox/unity-app/AEC3/libs/cpu_features-0.6.0/ndk_compat"
+    "${CMAKE_CURRENT_SOURCE_DIR}/libs/cpu_features-0.6.0/ndk_compat"
 )
 
 ################################################################################
@@ -995,7 +995,7 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
 endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-    "/Users/balazs/Dropbox/unity-app/AEC3/libs/cpu_features-0.6.0/ndk_compat"
+    "${CMAKE_CURRENT_SOURCE_DIR}/libs/cpu_features-0.6.0/ndk_compat"
 )
 
 ################################################################################
@@ -1249,7 +1249,7 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
 endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-    "/Users/balazs/Dropbox/unity-app/AEC3/libs/cpu_features-0.6.0/ndk_compat"
+    "${CMAKE_CURRENT_SOURCE_DIR}/libs/cpu_features-0.6.0/ndk_compat"
 )
 
 ################################################################################
